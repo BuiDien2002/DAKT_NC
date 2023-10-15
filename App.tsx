@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
+import database from '@react-native-firebase/database';
 const App: React.FC = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [temperature, setTemperature] = useState(0);
+  const [salinity, setSalinity] = useState(0);
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentDate(new Date());
@@ -30,6 +33,20 @@ const App: React.FC = () => {
       clearInterval(intervalId); // Cleanup when the component unmounts
     };
   }, [channelID, apiKey]);
+  useEffect(() => {
+    database()
+      .ref('/temp')
+      .on('value', snapshot => {
+        setSalinity(snapshot.val());
+      });
+  }, [temperature]);
+  useEffect(() => {
+    database()
+      .ref('/sal')
+      .on('value', snapshot => {
+        setTemperature(snapshot.val());
+      });
+  }, [salinity]);
   const getFormattedDate = () => {
     const options: Intl.DateTimeFormatOptions = {day: 'numeric'};
     return currentDate.toLocaleString('en-US', options);

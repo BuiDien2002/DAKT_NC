@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "355969848099",
+    "firebase_url": "https://hahaha-ad13b-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "hahaha-ad13b",
+    "storage_bucket": "hahaha-ad13b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:355969848099:android:7cfa417109a6b760457296",
+        "android_client_info": {
+          "package_name": "com.react_native"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLAwKRtL40PcH5V1LDcSTAtGgPoXGGS7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
